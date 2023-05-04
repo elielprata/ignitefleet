@@ -1,10 +1,10 @@
 import { Text, View } from 'react-native'
-import { styles } from './styles'
+import { Container } from './styles'
 
 export function SignIn() {
   return (
-    <View style={styles.container}>
+    <Container>
       <Text>Open up App.tsx to start working on your app!</Text>
-    </View>
+    </Container>
   )
 }
