@@ -1,6 +1,7 @@
 import { Power } from 'phosphor-react-native'
 import { TouchableOpacity } from 'react-native'
 import { useApp, useUser } from '@realm/react'
+import { useSafeAreaInsets } from 'react-native-safe-area-context'
 
 import theme from '../../theme'
 
@@ -9,13 +10,16 @@ import { Container, Greeting, Message, Name, Picture } from './styles'
 export function HomeHeader() {
   const user = useUser()
   const app = useApp()
+  const insets = useSafeAreaInsets()
+
+  const paddingTop = insets.top + 32
 
   function handleLogout() {
     app.currentUser?.logOut()
   }
 
   return (
-    <Container>
+    <Container style={{ paddingTop }}>
       <Picture
         source={{ uri: user?.profile.pictureUrl }}
         placeholder="L184i9ofbHof00ayjZay~qj[ayjt"
