@@ -29,7 +29,9 @@ export default function App() {
   return (
     <AppProvider id={REALME_APP_ID}>
       <ThemeProvider theme={theme}>
-        <SafeAreaProvider>
+        <SafeAreaProvider
+          style={{ flex: 1, backgroundColor: theme.COLORS.GRAY_800 }}
+        >
           <StatusBar
             barStyle="light-content"
             backgroundColor="transparent"
