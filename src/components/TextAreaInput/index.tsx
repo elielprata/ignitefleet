@@ -1,24 +1,30 @@
 import { useTheme } from 'styled-components'
-import { TextInputProps } from 'react-native'
+import { TextInput, TextInputProps } from 'react-native'
 
 import { Container, Input, Label } from './styles'
+import { forwardRef } from 'react'
 
 type Props = TextInputProps & {
   label: string
 }
 
-export function TextAreaInput({ label, ...rest }: Props) {
-  const { COLORS } = useTheme()
-  return (
-    <Container>
-      <Label>{label}</Label>
+const TextAreaInput = forwardRef<TextInput, Props>(
+  ({ label, ...rest }, ref) => {
+    const { COLORS } = useTheme()
+    return (
+      <Container>
+        <Label>{label}</Label>
 
-      <Input
-        placeholderTextColor={COLORS.GRAY_400}
-        multiline
-        autoCapitalize="sentences"
-        {...rest}
-      />
-    </Container>
-  )
-}
+        <Input
+          ref={ref}
+          placeholderTextColor={COLORS.GRAY_400}
+          multiline
+          autoCapitalize="sentences"
+          {...rest}
+        />
+      </Container>
+    )
+  }
+)
+
+export { TextAreaInput }
