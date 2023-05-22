@@ -1,4 +1,6 @@
 import 'react-native-get-random-values'
+import './src/libs/dayjs'
+
 import { ThemeProvider } from 'styled-components/native'
 import { StatusBar } from 'react-native'
 import { AppProvider, UserProvider } from '@realm/react'
