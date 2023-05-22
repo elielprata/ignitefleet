@@ -34,7 +34,6 @@ export function Arrival() {
   const title = historic?.status === 'departure' ? 'Chegada' : 'Detalhes'
 
   function handleRemoveVehicleUsage() {
-    console.log('asdf')
     Alert.alert('Cancelar', 'Cancelar a utilização do veículo?', [
       { text: 'Não', style: 'cancel' },
       { text: 'Sim', onPress: () => removeVehicleUsage() },
