@@ -5,9 +5,10 @@ import { useTheme } from 'styled-components/native'
 import { Container, Departure, Info, LicensePlate } from './styles'
 
 export type HistoricCardProps = {
+  id: string
   licensePlate: string
   created: string
-  isSync: string
+  isSync: boolean
 }
 
 type Props = TouchableOpacityProps & {
@@ -18,7 +19,7 @@ export function HistoricCard({ data, ...rest }: Props) {
   const { COLORS } = useTheme()
 
   return (
-    <Container {...rest}>
+    <Container activeOpacity={0.7} {...rest}>
       <Info>
         <LicensePlate>{data.licensePlate}</LicensePlate>
         <Departure>{data.created}</Departure>

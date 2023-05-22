@@ -32,6 +32,7 @@ export function Arrival() {
   const historic = useObject(Historic, new BSON.UUID(id))
 
   function handleRemoveVehicleUsage() {
+    console.log('asdf')
     Alert.alert('Cancelar', 'Cancelar a utilização do veículo?', [
       { text: 'Não', style: 'cancel' },
       { text: 'Sim', onPress: () => removeVehicleUsage() },
